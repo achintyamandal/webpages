@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+	  
+.divx {
+/* basic */ 
+ background-color: #fff;
+ margin: 0 auto;
+ width: 200px;
+ padding: 100px;
+ text-align: center;
+/* border-radius */
+ -webkit-border-radius: 5px;
+ -moz-border-radius: 5px;
+ border-radius: 5px;
+/* box-shadow */
+ -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+ -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+ box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+}
+	  
+	  
+         .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 30%;
+            top: 0;
+            width: 50%;
+            height: 5%;
+			background-color: #8AC1E0;
+			padding: 10px 10px;
+			
+         }
+       
+	    .msg {
+            color: green;
+            float: left;
+            font-size: 25px;
+            
+         }
+	   
+         .end {
+            color: white;
+            float: right;
+            font-size: 15px;
+            
+         }
+         .end:hover,
+         .end:focus {
+            color: #f00;
+            text-decoration: none;
+            cursor: pointer;
+         }
+         
+     
+       
+      </style>
+   </head>
+   <body>
+      <h2>Heading</h2>
+      <button id="btn" onclick="showmsg('Hello, this is done successfully!');">Click for Popup</button>
+      <div id="myModal" class="divx popup">
+         <!-- Modal content -->
+             
+               <span class="end"> &#10005;</span>
+             <span class="msg" id="msgspan"> </span> 
+           
+           
+      </div>
+      <script>
+	  function showmsg(msgtxt)
+	  {
+         var popup = document.getElementById('myModal');
+        // var myBytton = document.getElementById("btn");
+		document.getElementById('msgspan').innerHTML=msgtxt;
+         var span = document.getElementsByClassName("end")[0];
+         //myBytton.onclick = function() {
+            popup.style.display = "block";
+         //}
+         span.onclick = function() {
+            popup.style.display = "none";
+         }
+         
+      
+	  }
+	  </script>
+   </body>
+</html>
